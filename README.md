@@ -23,12 +23,17 @@ O projeto é desenvolver um sistema para agilizar o agendamento de serviços, e 
 
 ## Abaixo tem alguns prints mostrando as telas da aplicação
 
-[home-screen](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/home.png)
-[login](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/login.png)
-[report](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/report.png)
-[client](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/client.png)
-[service](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/service.png)
-[menu](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/menu.png)
+![home-screen](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/home.png)
+
+![login](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/login.png)
+
+![report](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/report.png)
+
+![client](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/client.png)
+
+![service](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/service.png)
+
+![menu](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/menu.png)
 
 
 
