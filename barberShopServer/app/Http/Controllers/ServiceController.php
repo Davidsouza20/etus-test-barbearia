@@ -10,13 +10,12 @@ class ServiceController extends Controller
 {
     private $service;
 
-    public function __construct(Service $service)
-    {
+    public function __construct(Service $service){
         $this->service = $service;
     }
 
     public function index() {
-        $services = Service::with('client:id,name,email,phone')->get();
+        $services = Service::with('client:id,name,email,phone')->with('employee:id,name')->get();
         return response()->json($services);
     }
 

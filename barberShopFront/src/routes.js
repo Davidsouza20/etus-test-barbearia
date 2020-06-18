@@ -3,6 +3,8 @@ import Service from './views/Service'
 import Client from './views/Client'
 import Report from './views/Report'
 import EmployeeLogin from './views/EmployeeLogin'
+import ManagerLogin from './views/ManagerLogin'
+import ManagerReport from './views/ManagerReport'
 
 
 const routes = [
@@ -26,8 +28,16 @@ const routes = [
         component: Report,
         
     },
+
+    { 
+        path: '/relatorio-gestor',  
+        component: ManagerReport,
+        
+    },
     
     { path: '/login',  component: EmployeeLogin },
+
+    { path: '/login-manager',  component: ManagerLogin },
 
 
 ];

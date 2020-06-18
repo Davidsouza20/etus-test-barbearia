@@ -1,6 +1,6 @@
 <template>
     <div class="table">
-        <h4><strong>Profissional:</strong>  {{employee_name}}</h4>
+        <h4><strong>Profissional :</strong>  {{employee_name}}</h4>
         <hr>
         <div class="form-group flex">
             <div>
@@ -16,10 +16,31 @@
         </div>
          <hr>
         <h3>Relatório de Serviços</h3>
-        <b-table striped hover :items="tmpItems" :fields="fields"></b-table>
+         <span class="count"><strong> #</strong> {{ tmpItems.length}}</span>
+        <br>
+        <hr>
+        
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Serviço</th>
+                    <th>Data</th>
+                    <th>Contato</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in tmpItems" :key="item.id">
+                    <td>{{ item.client }}</td>
+                    <td>{{ item.service }}</td>
+                    <td>{{ item.date }}</td>
+                    <td class="icon">
+                         <a :href="'https://wa.me/'+ item.client.phone" target="_blank"><img src="/img/whatsapp.svg" alt="whatsapp icone"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    
-
 </template>
 <script>
 import api from '../services/api'
@@ -34,12 +55,12 @@ export default {
     data() {
         return {
             services: [],
-            fields: ['Cliente', 'Serviço', 'Data'],
             items: [],
-            startDate: new Date(),
-            endDate: new Date(),
             tmpItems: [],
-            employee_name: localStorage.getItem('employee_name')
+            fields: ['Cliente', 'Serviço', 'Data', 'Contato'],
+            startDate: new Date('2018-01-01'),
+            endDate: new Date(),
+            employee_name: localStorage.getItem('employee_name'),
         }
     },
     
@@ -50,8 +71,7 @@ export default {
                 return (date >= this.startDate && date <= this.endDate);
             });
             this.tmpItems = filteredItems;
-        },
-          
+        },         
     },
 
     async created() {
@@ -64,9 +84,12 @@ export default {
         this.services.map((service) => {
             if (service.employee_id == localStorage.getItem('employee_id')) {
                 this.items.push({
-                    'Cliente': service.client.name,
-                    'Serviço': service.service_type,
-                    'Data': service.scheduled_date
+                    client: service.client.name,
+                    service: service.service_type,
+                    date: service.scheduled_date,
+                    contact: service.client.phone
+                    
+                    
                 })
             }    
         });
@@ -81,6 +104,15 @@ export default {
     *{
         margin-top: 25px;
         font-family: 'Roboto300', sans-serif;
+    }
+
+    .icon {
+        align-self: stretch;
+    }
+
+     .count {
+        float: right;
+        justify-self: right;
     }
 
     button {
@@ -98,7 +130,7 @@ export default {
     }
 
     .table {
-        max-width: 900px;
+        max-width: 1000px;
         width: 95%;
         margin: 20px auto;
     }

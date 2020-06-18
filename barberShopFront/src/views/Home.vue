@@ -9,7 +9,7 @@
         </div>
        
          <div class="box">
-            <router-link tag="li" to="/login" class="link">
+            <router-link tag="li" to="/login-manager" class="link">
                 <img src="/img/gestor.png" alt="Gestor">
                 <br>
                 <h3>Gestor</h3> 

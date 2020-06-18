@@ -20,7 +20,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <router-link v-if="logged" class="nav-link" to='/relatorio'>Relatórios</router-link>
+                            <router-link v-if="logged && !isManager" class="nav-link" to='/relatorio'>Relatórios</router-link>
+                        </li>
+
+                        <li class="nav-item">
+                            <router-link v-if="logged && isManager" class="nav-link" to='/relatorio-gestor'>Relatórios do Gestor</router-link>
                         </li>
 
                         <li class="nav-item">
@@ -39,14 +43,13 @@
 export default {
     data () {
         return {
-            logged: false
+            logged: false,
+            isManager: localStorage.getItem('employee_manager')
         }
     },
     methods: {
         logout () {
-            localStorage.removeItem('employee_id');
-            localStorage.removeItem('employee_id');
-            localStorage.removeItem('employee_id');
+            localStorage.clear();
             window.location.href = "/";
         }
     },

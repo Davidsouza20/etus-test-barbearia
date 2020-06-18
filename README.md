@@ -23,75 +23,99 @@ O projeto é desenvolver um sistema para agilizar o agendamento de serviços, e 
 
 ## Abaixo tem alguns prints mostrando as telas da aplicação
 
-[]()
+[home-screen](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/home.png)
+[login](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/login.png)
+[report](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/report.png)
+[client](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/client.png)
+[service](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/service.png)
+[menu](https://raw.githubusercontent.com/Davidsouza20/etus-test-barbearia/master/menu.png)
 
 
 
+## Como instalar o projeto ?
+
+### Requisitos 
+
+- Composer 
+- PHP 7.4
+- MySql
+- Node 
 
 
 
+Faça um clone do repositório
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```
+git clone https://github.com/Davidsouza20/etus-test-barbearia.git
+```
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Configurando a API 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Vá para a pasta barberShopServer
 
-## Laravel Sponsors
+```
+cd barberShopServer
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Instale todas as dependencias do projeto 
 
-### Premium Partners
+```
+composer install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
+Copie o arquivo para guardar as variaveis de ambiente e gere uma key
 
-### Community Sponsors
+```
+cp .env.example .env
+php artisan key:generate
+```
 
-<a href="https://op.gg"><img src="http://opgg-static.akamaized.net/icon/t.rectangle.png" width="150"></a>
+Rode as migrations e seed com dados para iniciar o projeto
 
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [云软科技](http://www.yunruan.ltd/)
+Antes de rodar o camando certifique-se de criar um banco de dados com o nome <b> barber_shop</b>
 
-## Contributing
+```
+php artisan migrate
+php artisan db:seed
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Pronto para iniciar o servidor rode o comando 
 
-## Code of Conduct
+```
+php artisan serve
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Configurando a aplicação web 
 
-## Security Vulnerabilities
+Vá para a pasta barberShopFront
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```
+cd barberShopFront
+```
 
-## License
+Instale todas as dependencias do projeto 
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+npm install 
+```
+
+Pronto para iniciar a aplicação 
+
+```
+npm run serve
+```
+
+### Acesso padrão na aplicação 
+
+Email para teste do ambiente de profissional
+```
+professional@test.com
+```
+
+Email para teste do ambiente de gestor
+```
+manager@test.com
+```
+
+
