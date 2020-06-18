@@ -45,7 +45,7 @@ export default {
     }
 
     .flex {
-        margin-top: 25px;
+        margin: 150px auto;
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;

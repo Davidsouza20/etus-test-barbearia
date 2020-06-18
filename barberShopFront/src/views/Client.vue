@@ -93,6 +93,10 @@ export default {
         margin-top: 25px;
         font-family: 'Roboto300', sans-serif;
     }
+
+    #client {
+        margin: 150px auto;
+    }
    
     .client-form {
         margin: 20px auto;

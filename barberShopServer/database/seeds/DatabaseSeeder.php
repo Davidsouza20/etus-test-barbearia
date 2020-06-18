@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         //Create first professional
         DB::table('employees')->insert([
-            'name' => 'Primeiro Profissional Cadastrado',
+            'name' => 'John Doe',
             'email' => 'test@test.com',
             'employee_type' => 1
         ]);

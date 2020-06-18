@@ -1,5 +1,5 @@
 <template>
-    <div id="client">
+    <div id="service">
        <h3>Cadastrar Serviço</h3>
 
        <div class="client-form">
@@ -125,6 +125,10 @@ export default {
     *{
         margin-top: 25px;
         font-family: 'Roboto300', sans-serif;
+    }
+
+    #service {
+        margin: 150px auto;
     }
 
     .client-list {

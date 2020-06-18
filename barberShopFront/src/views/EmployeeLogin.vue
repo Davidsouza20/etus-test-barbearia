@@ -77,10 +77,12 @@ export default {
 
 <style scoped>
     *{
-        height: 100%;
-        min-height: 100%;
         margin-top: 25px;
         font-family: 'Roboto300', sans-serif;
+    }
+
+    #employee {
+        margin: 200px auto;
     }
    
     .client-form {
